@@ -1,0 +1,12 @@
+version: '2'
+services:
+  postorius:
+    build: .
+    environment:
+      - MAILMAN_REST_API_URL = 'http://mailman-core:8001'
+      - MAILMAN_REST_API_USER = 'restadmin'
+      - MAILMAN_REST_API_PASS = 'restpass'
+    volumes:
+      - ./postorius_settings:/postorius/local
+    ports:
+      - 8000:8000
