@@ -18,13 +18,7 @@ You can also override the settings using a file in /postorius/local/settings.py
 
 Note that this file overrides the environment variables!
 
-On first start you have to initialize the databse by running two commands:
-1. Populate the database:  
-`docker exec -it <container_name> python /postorius/manage.py migrate`
-2. Create a superuser:
-`docker exec -it <container_name> python /postorius/manage.py createsuperuser`
-
-The server is exposed under port `8000`
+The django server is exposed under port `8000`
 
 The provided docker-compose file should simply the process of getting it running
 
@@ -34,6 +28,12 @@ Access to the django commandline can be obtained using:
 `docker exec -it <container_name> python /postorius/manage.py mmclient`  
 a mailmanclient Client object is provided for convenience which can be accessed using `client`
 
+### First run
+On first start you have to initialize the database by running two commands:
+* Populate the database:  
+`docker exec -it <container_name> python /postorius/manage.py migrate`
+* Create a superuser:  
+`docker exec -it <container_name> python /postorius/manage.py createsuperuser`
 
 ## How to build
 
